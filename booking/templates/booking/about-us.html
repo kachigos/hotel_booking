@@ -1,0 +1,186 @@
+{% extends 'booking/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Hero Area Section Begin -->
+    <div class="hero-area set-bg other-page" data-setbg="{% static 'assets/img/about_bg.jpg' %}">
+    </div>
+    <!-- Hero Area Section End -->
+
+    <!-- Search Filter Section Begin -->
+    <section class="search-filter other-page-filter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="#" class="check-form">
+                        <h4>Check Availability</h4>
+                        <div class="datepicker">
+                            <p>From</p>
+                            <input type="text" class="datepicker-1" value="dd / mm / yyyy">
+                            <img src="{% static 'assets/img/calendar.png' %}" alt="">
+                        </div>
+                        <div class="datepicker">
+                            <p>To</p>
+                            <input type="text" class="datepicker-2" value="dd / mm / yyyy">
+                            <img src="{% static 'assets/img/calendar.png' %}" alt="">
+                        </div>
+                        <div class="room-quantity">
+                            <div class="single-quantity">
+                                <p>Adults</p>
+                                <div class="pro-qty"><input type="text" value="0"></div>
+                            </div>
+                            <div class="single-quantity">
+                                <p>Children</p>
+                                <div class="pro-qty"><input type="text" value="0"></div>
+                            </div>
+                            <div class="single-quantity last">
+                                <p>Rooms</p>
+                                <div class="pro-qty"><input type="text" value="0"></div>
+                            </div>
+                        </div>
+                        <div class="room-selector">
+                            <p>Room</p>
+                            <select class="suit-select">
+                                <option>Eg. Master suite</option>
+                                <option value="">Double Room</option>
+                                <option value="">Single Room</option>
+                                <option value="">Special Room</option>
+                            </select>
+                        </div>
+                        <button type="submit">Go</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Search Filter Section End -->
+
+    <!-- About Us Section Begin -->
+    <section class="about-us spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    {% for b in blog %}
+                    <div class="about-left">
+                        <div class="section-title">
+                            <h2>{{b.title}}</h2>
+                        </div>
+                        <p class="second-text">{{b.text}}</p>
+                    </div>
+                    {% endfor %}
+                         <a href="#" class="primary-btn">Make a Reservation</a>
+                </div>
+                <div class="col-lg-5">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-7">
+                            <div class="about-img">
+                                <img src="{% static 'assets/img/about/about-2.jpg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5">
+                            <div class="about-img second-img">
+                                <img src="{% static 'assets/img/about/about-2.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5">
+                            <div class="about-img third-img">
+                                <img src="{% static 'assets/img/about/about-3.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-7">
+                            <div class="about-img">
+                                <img src="{% static 'assets/img/about/about-4.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section End -->
+
+    <!-- Milestone Counter Section Begin -->
+    <section class="milestone-counter spad set-bg" data-setbg="{% static 'assets/img/about/milestone-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mc-item">
+                        <div class="mc-num">
+                            <span class="counter">25</span>
+                        </div>
+                        <div class="mc-text">
+                            <h3>Luxury Suites</h3>
+                            <p>From $399</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mc-item">
+                        <div class="mc-num">
+                            <span class="counter">35</span>
+                            <strong>K</strong>
+                        </div>
+                        <div class="mc-text">
+                            <h3>Happy Clients</h3>
+                            <p>all year long</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mc-item">
+                        <div class="mc-num">
+                            <span class="counter">365</span>
+                        </div>
+                        <div class="mc-text">
+                            <h3>Days/ Year</h3>
+                            <p>From $399</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Milestone Counter Section End -->
+
+    <!-- Award Section Begin -->
+    <section class="award-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Наши награды</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    {% for a in awards %}
+                    <div class="award-item">
+                        <img src="{% static 'assets/img/about/award-img.png' %}" alt="">
+                        <h5>{{a.year}}</h5>
+                        <h4>{{a.title}}</h4>
+                        <span>{{a.sub_title}}</span>
+                        <p>{{a.desc}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+    </section>
+    <!-- Award Section End -->
+
+    <!-- Call To Action Begin -->
+    <section class="callto-section">
+        <div class="container">
+            <div class="callto-text">
+                <h2>Book your stay with us now!</h2>
+            </div>
+            <a href="#" class="primary-btn">Make a Reservation</a>
+        </div>
+    </section>
+    <!-- Call To Action End  -->
+
+{% endblock content %}

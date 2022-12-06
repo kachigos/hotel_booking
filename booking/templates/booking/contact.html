@@ -1,0 +1,124 @@
+{% extends 'booking/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <!-- Hero Area Section Begin -->
+    <div class="hero-area set-bg other-page" data-setbg="{% static 'assets/img/about_bg.jpg' %}">
+    </div>
+    <!-- Hero Area Section End -->
+
+    <!-- Search Filter Section Begin -->
+    <section class="search-filter other-page-filter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="#" class="check-form">
+                        <h4>Check Availability</h4>
+                        <div class="datepicker">
+                            <p>From</p>
+                            <input type="text" class="datepicker-1" value="dd / mm / yyyy">
+                            <img src="{% static 'assets/img/calendar.png' %}" alt="">
+                        </div>
+                        <div class="datepicker">
+                            <p>To</p>
+                            <input type="text" class="datepicker-2" value="dd / mm / yyyy">
+                            <img src="{% static 'assets/img/calendar.png' %}" alt="">
+                        </div>
+                        <div class="room-quantity">
+                            <div class="single-quantity">
+                                <p>Adults</p>
+                                <div class="pro-qty"><input type="text" value="0"></div>
+                            </div>
+                            <div class="single-quantity">
+                                <p>Children</p>
+                                <div class="pro-qty"><input type="text" value="0"></div>
+                            </div>
+                            <div class="single-quantity last">
+                                <p>Rooms</p>
+                                <div class="pro-qty"><input type="text" value="0"></div>
+                            </div>
+                        </div>
+                        <div class="room-selector">
+                            <p>Room</p>
+                            <select class="suit-select">
+                                <option>Eg. Master suite</option>
+                                <option value="">Double Room</option>
+                                <option value="">Single Room</option>
+                                <option value="">Special Room</option>
+                            </select>
+                        </div>
+                        <button type="submit">Go</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Search Filter Section End -->
+
+    <!-- Contact Section Begin -->
+<section class="contact-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-title">
+                    <div class="section-title">
+                        <h3>У Вас есть вопросы, предложения или <br> Вы хотите оставить отзыв?</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <form action="#" class="contact-form">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" placeholder="ФИО">
+                    </div>
+                <div class="col-lg-6">
+                    <input type="email" placeholder="Email">
+                </div>
+                    <div class="col-lg-12">
+                        <input type="text" class="subject" placeholder="Subject">
+                        <textarea placeholder="Message"></textarea>
+                        <button type="submit">Send Message</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+            <div class="col-lg-4">
+                {% for c in contact %}
+                <div class="info-box">
+                    <img src="{% static 'assets/img/contact-logo.png' %}" alt="">
+                        <ul>
+                            <li>номер: {{c.number}}</li>
+                            <li>номер: {{c.number}}</li>
+                            <li>email: {{c.email}}</li>
+                            <li>Everyday: 08:00 -22:00</li>
+                        </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<!--    &lt;!&ndash; Contact Section End &ndash;&gt;-->
+
+    <!-- Map Section Begin -->
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26440.72384129847!2d-118.24906619231132!3d34.06719475913053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c659f50c318d%3A0xe2ffb80a9d3820ae!2sChinatown%2C%20Los%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1570213740685!5m2!1sen!2sbd"
+            height="910" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+    <!-- Map Section End -->
+
+{% endblock %}

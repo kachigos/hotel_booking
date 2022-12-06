@@ -1,0 +1,274 @@
+{% extends 'booking/base.html' %}
+{% load static %}
+
+    {% block content %}
+
+    <!-- Hero Area Section Begin -->
+    <section class="hero-area set-bg" data-setbg="{% static 'assets/img/hero-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="hero-text">
+                        {% for b in banner %}
+                        <h1>{{ b.banner }}</h1>
+                        {% endfor banner %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Area Section End -->
+
+    <!-- Search Filter Section Begin -->
+    <section class="search-filter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="#" class="check-form">
+                        <h4>Проверка доступости</h4>
+                        <div class="datepicker">
+                            <p>From</p>
+                            <input type="text" class="datepicker-1" value="dd / mm / yyyy">
+                            <img src="{% static 'assets/img/calendar.png' %}" alt="">
+                        </div>
+                        <div class="datepicker">
+                            <p>To</p>
+                            <input type="text" class="datepicker-2" value="dd / mm / yyyy">
+                            <img src="{% static 'assets/img/calendar.png' %}" alt="">
+                        </div>
+                        <div class="room-quantity">
+                            <div class="single-quantity">
+                                <p>Adults</p>
+                                <div class="pro-qty"><input type="text" value="0"></div>
+                            </div>
+                            <div class="single-quantity">
+                                <p>Children</p>
+                                <div class="pro-qty"><input type="text" value="0"></div>
+                            </div>
+                            <div class="single-quantity last">
+                                <p>Rooms</p>
+                                <div class="pro-qty"><input type="text" value="0"></div>
+                            </div>
+                        </div>
+                        <div class="room-selector">
+                            <p>Room</p>
+                            <select class="suit-select">
+                                <option>Eg. Master suite</option>
+                                <option value="">Double Room</option>
+                                <option value="">Single Room</option>
+                                <option value="">Special Room</option>
+                            </select>
+                        </div>
+                        <button type="submit">Go</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Search Filter Section End -->
+
+    <!-- Intro Text Section Begin -->
+    <section class="intro-section spad">
+        <div class="container">
+            <div class="row intro-text">
+                <div class="col-lg-6">
+                    <div class="intro-left">
+                        <div class="section-title">
+                            {% for t in desc %}
+                            <span> {{ t.title }} </span>
+                            <h2>{{ t.theme }}</h2>
+                        </div>
+                        <p>{{ t.desc }}</p>
+                        {% endfor desc %}
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="intro-right">
+                        {% for r in desc %}
+                        <p>{{ r.right }}</p>
+                        {% endfor desc %}
+                        <a href="#" class="primary-btn">Make a Reservation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Intro Text Section End -->
+
+    <!-- Facilities Section Begin -->
+    <section class="facilities-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="facilities-item set-bg" data-setbg="{% static 'assets/img/faci-1.jpg' %}">
+                        <div class="fi-title">
+                            <h2>Роскошный люкс</h2>
+                            <p>от $399</p>
+                        </div>
+                        <div class="fi-features">
+                            <div class="fi-info">
+                                <i class="flaticon-019-television"></i>
+                                <p>Smart TV</p>
+                            </div>
+                            <div class="fi-info">
+                                <i class="flaticon-029-wifi"></i>
+                                <p>High Wi-fii</p>
+                            </div>
+                            <div class="fi-info">
+                                <i class="flaticon-003-air-conditioner"></i>
+                                <p>AC</p>
+                            </div>
+                            <div class="fi-info">
+                                <i class="flaticon-036-parking"></i>
+                                <p>Parking</p>
+                            </div>
+                            <div class="fi-info">
+                                <i class="flaticon-007-swimming-pool"></i>
+                                <p>Pool</p>
+                            </div>
+                        </div>
+                        <a href="#" class="primary-btn">Make a Reservation</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="facilities-item set-bg fi-right" data-setbg="{% static 'assets/img/faci-2.jpg' %}">
+                        <div class="fi-title">
+                            <h2>Крутой бассейн</h2>
+                            <p>FOR ALL OUR GUESTS</p>
+                        </div>
+                        <a href="#" class="primary-btn">Make a Reservation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Facilities Section End -->
+
+    <!-- Testimonial Section Begin -->
+    <section class="testimonial-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h2>Гости</h2>
+                </div>
+            </div>
+            <div class="row">
+<!--                <div class="col-lg-6">-->
+<!--                    <div class="testimonial-item">-->
+<!--                        <div class="ti-time">-->
+<!--                            02 / 02 / 2019-->
+<!--                        </div>-->
+<!--                        <h4>We loved our stay</h4>-->
+<!--                        <div class="rating">-->
+<!--                            <i class="fa fa-star"></i>-->
+<!--                            <i class="fa fa-star"></i>-->
+<!--                            <i class="fa fa-star"></i>-->
+<!--                            <i class="fa fa-star"></i>-->
+<!--                            <i class="fa fa-star"></i>-->
+<!--                        </div>-->
+<!--                        <p>Lorem ipsum dolor sit amet, consectetur adipiselit. Vivamus libero mauris, bibendum eget-->
+<!--                            sapien ac, ultrices rhoncus ipsum. Donec nec sapien in urna fermentum ornare.</p>-->
+<!--                        <div class="ti-author">-->
+<!--                            <div class="author-pic">-->
+<!--                                <img src="{% static 'assets/img/author-1.png' %}" alt="">-->
+<!--                            </div>-->
+<!--                            <div class="author-text">-->
+<!--                                <h6>JOHN DOE <span>Madrid</span></h6>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                {% for d in comment %}
+                <div class="col-lg-6">
+                    <div class="testimonial-item">
+                        <div class="ti-time">
+
+                            {{d.add_time}}
+                        </div>
+                        <h4>I will come back again</h4>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p>{{d.text}}</p>
+                        <div class="ti-author">
+                            <div class="author-pic">
+                                <img src="{% static 'assets/img/frofil.png' %}" alt="">
+                            </div>
+                            <div class="author-text">
+                                <h6>{{d.name}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 {% endfor %}
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
+            <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+            </svg>
+            <a href="#" class="">see all comments...</a>
+        </div>
+    </section>
+    <!--     Testimonial Section End -->
+
+    <!-- Video Section Begin -->
+    <div class="video-section">
+        <div class="video-bg set-bg" data-setbg="{% static 'assets/img/video-bg.jpg' %}"></div>
+        <div class="container">
+            <div class="video-text set-bg" data-setbg="{% static 'assets/img/video-inside-bg.jpg' %}">
+                {% for v in video %}
+                <a href='{{v.link.url}}' class="pop-up"><i class="fa fa-play"></i></a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- Video Section End -->
+
+    <!-- Home Page About Section Begin -->
+    <section class="homepage-about spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    {% for b in blog %}
+                    <div class="about-text">
+                        <div class="section-title">
+                            <h2>{{b.title}}</h2>
+                        </div>
+                        <p>{{b.text}}</p>
+                    </div>
+                {% endfor %}
+                    <a href="#" class="primary-btn">Make a Reservation</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="about-img">
+                                <img src="{% static 'assets/img/home-about-1.jpg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="about-img">
+                                <img src="{% static 'assets/img/home-about-2.jpg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="about-img">
+                                <img src="{% static 'assets/img/home-about-3.jpg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="about-img">
+                                <img src="{% static 'assets/img/home-about-4.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Home Page About Section End -->
+
+{% endblock content %}
